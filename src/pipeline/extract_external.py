@@ -7,7 +7,7 @@ class HolidayExtractor:
     Extracts Brazilian national holidays using the Brasil API.
     """
     
-    def __init__(self, years: list[int] = None, output_dir: str = "../data"):
+    def __init__(self, years: list[int] = None, output_dir: str = "../../data"):
         """
         Initializes the Holiday Extractor.
         
