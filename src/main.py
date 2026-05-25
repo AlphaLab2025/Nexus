@@ -5,6 +5,7 @@ sys.path.append(str(Path(__file__).parent))
 
 from pipeline.kaggle_download import KaggleDownloader
 from pipeline.extract_external import HolidayExtractor
+from pipeline.extract_ibge_locations import IBGELocationExtractor
 
 class DataPipeline:
     
@@ -22,6 +23,7 @@ class DataPipeline:
         # Instantiate the components
         self.downloader = KaggleDownloader(download_dir=str(self.download_dir))
         self.holiday_extractor = HolidayExtractor(output_dir=str(self.download_dir))
+        self.ibge_location_extractor = IBGELocationExtractor(output_dir=str(self.download_dir))
         
     def run(self, dataset_name: str) -> None:
         """
@@ -50,6 +52,15 @@ class DataPipeline:
             print("External API extraction completed.")
         except Exception as e:
             print(f"Pipeline failed during external API extraction phase: {e}")
+            return
+
+        try:
+            print("\n--- Step 1c: Extracting from IBGE API (States and Regions) ---")
+            states = self.ibge_location_extractor.fetch_states()
+            self.ibge_location_extractor.save_data(states)
+            print("IBGE API extraction completed.")
+        except Exception as e:
+            print(f"Pipeline failed during IBGE API extraction phase: {e}")
             return
             
         print("\n=== Pipeline Execution Finished ===")
