@@ -1,0 +1,285 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nexus | Dashboard</title>
+  <link rel="stylesheet" href="assets/dashboard.css">
+  <script src="assets/dashboard.js" defer></script>
+</head>
+
+<body>
+
+  <div class="shell">
+    <div class="app-frame">
+
+      <!-- ── Sidebar ──────────────────────────────────────────── -->
+      <aside class="sidebar" aria-label="Navegação do dashboard">
+
+        <div class="brand">
+          <div class="brand-mark">N</div>
+          <div>
+            <strong>Nexus</strong>
+            <span>Brazilian E-commerce Analytics</span>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a href="#visao-geral" aria-current="page">Visão geral <span>01</span></a>
+          <a href="#logistica">Logística <span>02</span></a>
+          <a href="#receita">Receita <span>03</span></a>
+          <a href="#qualidade">Qualidade <span>04</span></a>
+          <a href="#fluxo">Fluxo <span>05</span></a>
+        </nav>
+
+        <p class="sidebar-note">
+          Dashboard executivo construído sobre a base analítica
+          <code>orders_analytics.csv</code>, com granularidade de um pedido por linha.
+        </p>
+
+      </aside>
+
+      <!-- ── Conteúdo principal ────────────────────────────────── -->
+      <main>
+
+        <!-- Topbar / Cabeçalho -->
+        <section class="topbar" id="visao-geral">
+          <div>
+            <p class="eyebrow">Fase 2 · Análise exploratória</p>
+            <h1>Operação, entrega e valor em uma leitura executiva.</h1>
+            <p class="lead">
+              Uma visão moderna do desempenho do e-commerce brasileiro: volume,
+              prazo, frete, distância e qualidade em um painel direto para decisão.
+            </p>
+          </div>
+          <div class="status-pill" aria-label="Status da base">
+            <span class="status-dot"></span>
+            <span data-api-status></span>
+          </div>
+        </section>
+
+        <!-- Métricas principais -->
+        <section class="metrics-grid" aria-label="Indicadores principais">
+
+          <article class="metric accent">
+            <div>
+              <small>Pedidos totais</small>
+              <strong data-metric="orders_total"></strong>
+            </div>
+            <span>Granularidade final sem pedidos duplicados.</span>
+          </article>
+
+          <article class="metric">
+            <div>
+              <small>Pedidos entregues</small>
+              <strong data-metric="delivered_total"></strong>
+            </div>
+            <span data-copy="delivered_rate"></span>
+          </article>
+
+          <article class="metric">
+            <div>
+              <small>Taxa de atraso</small>
+              <strong data-metric="late_rate"></strong>
+            </div>
+            <span>Pedidos entregues acima da data estimada.</span>
+          </article>
+
+          <article class="metric">
+            <div>
+              <small>Tempo médio</small>
+              <strong data-metric="delivery_days_mean"></strong>
+            </div>
+            <span data-copy="delivery_median"></span>
+          </article>
+
+        </section>
+
+        <!-- Logística: tendência + insights + saúde operacional -->
+        <section class="dashboard-grid" id="logistica">
+
+          <article class="panel">
+            <div class="panel-header">
+              <h2>Tendência mensal de pedidos</h2>
+              <p>Volume de vendas por mês a partir de 2017.</p>
+            </div>
+            <div class="chart">
+              <img data-chart="monthly_orders" src="../../reports/figures/linha_tendencia_vendas.png"
+                alt="Linha temporal com volume de pedidos por mês">
+            </div>
+          </article>
+
+          <div class="stack">
+
+            <article class="panel">
+              <div class="panel-header">
+                <h2>Leituras-chave</h2>
+                <p>Sinais mais importantes para priorização.</p>
+              </div>
+              <div class="insight-list">
+                <div class="insight">
+                  <span class="bar"></span>
+                  <p>
+                    <strong>Entrega como centro da experiência</strong>
+                    <span data-copy="delivery_insight"></span>
+                  </p>
+                </div>
+                <div class="insight">
+                  <span class="bar coral"></span>
+                  <p>
+                    <strong>Frete concentrado, mas com outliers</strong>
+                    <span data-copy="freight_insight"></span>
+                  </p>
+                </div>
+                <div class="insight">
+                  <span class="bar amber"></span>
+                  <p>
+                    <strong>Distância importa na operação</strong>
+                    <span data-copy="distance_insight"></span>
+                  </p>
+                </div>
+                <div class="insight">
+                  <span class="bar violet"></span>
+                  <p>
+                    <strong>Qualidade da base está pronta</strong>
+                    <span data-copy="quality_insight"></span>
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-header">
+                <h2>Saúde operacional</h2>
+                <p>Indicadores consolidados da base final.</p>
+              </div>
+              <div class="mini-stat">
+
+                <div class="progress-row">
+                  <div class="progress-label">
+                    <span>Pedidos entregues</span>
+                    <span data-progress-label="delivered_rate"></span>
+                  </div>
+                  <div class="track">
+                    <div class="fill" data-progress="delivered_rate" style="width: 0%"></div>
+                  </div>
+                </div>
+
+                <div class="progress-row">
+                  <div class="progress-label">
+                    <span>Pedidos atrasados</span>
+                    <span data-progress-label="late_rate"></span>
+                  </div>
+                  <div class="track">
+                    <div class="fill" data-progress="late_rate" style="width: 0%"></div>
+                  </div>
+                </div>
+
+                <div class="progress-row">
+                  <div class="progress-label">
+                    <span>Dados completos de distância</span>
+                    <span data-progress-label="distance_completeness"></span>
+                  </div>
+                  <div class="track">
+                    <div class="fill" data-progress="distance_completeness" style="width: 0%"></div>
+                  </div>
+                </div>
+
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- Comparação: histograma + boxplot por região -->
+        <section class="comparison">
+
+          <article class="panel">
+            <div class="panel-header">
+              <h2>Distribuição do tempo de entrega</h2>
+              <p>Concentração, mediana e cauda de atrasos.</p>
+            </div>
+            <div class="chart">
+              <img data-chart="delivery_histogram" src="../../reports/figures/hist_tempo_entrega.png" alt="Histograma do tempo de entrega em dias">
+            </div>
+          </article>
+
+          <article class="panel" id="receita">
+            <div class="panel-header">
+              <h2>Frete por região</h2>
+              <p>Comparação regional da dispersão de valores.</p>
+            </div>
+            <div class="chart">
+              <img data-chart="freight_by_region" src="../../reports/figures/box_frete_regiao.png"
+                alt="Boxplot do valor de frete por região do cliente">
+            </div>
+          </article>
+
+        </section>
+
+        <!-- Galeria: scatter + heatmap -->
+        <section class="gallery">
+
+          <article class="panel">
+            <div class="panel-header">
+              <h2>Distância versus entrega</h2>
+              <p>Relação entre quilometragem estimada e prazo real.</p>
+            </div>
+            <div class="chart">
+              <img data-chart="distance_delivery" src="../../reports/figures/scatter_distancia_tempo.png"
+                alt="Dispersão entre distância em quilômetros e tempo de entrega">
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-header">
+              <h2>Correlações numéricas</h2>
+              <p>Sinais cruzados entre valor, frete, distância, entrega e review.</p>
+            </div>
+            <div class="chart">
+              <img data-chart="correlation" src="../../reports/figures/heatmap_correlacao.png"
+                alt="Mapa de calor de correlações entre variáveis numéricas">
+            </div>
+          </article>
+
+        </section>
+
+        <!-- Qualidade dos dados -->
+        <section class="panel" id="qualidade">
+          <div class="panel-header">
+            <h2>Qualidade dos dados</h2>
+            <p>Maiores nulos e controles de consistência da base final.</p>
+          </div>
+          <table class="quality-table">
+            <thead>
+              <tr>
+                <th>Indicador</th>
+                <th>Resultado</th>
+              </tr>
+            </thead>
+            <tbody data-quality-table></tbody>
+          </table>
+        </section>
+
+        <section class="panel" id="fluxo">
+          <div class="panel-header">
+            <h2>Fluxo do sistema</h2>
+            <p>Da extração dos dados até a leitura pelo dashboard.</p>
+          </div>
+          <div class="flow-list" data-flow-list></div>
+        </section>
+
+        <!-- Rodapé -->
+        <p class="footer">
+          Fontes: dataset Olist Brazilian E-commerce, feriados nacionais e regiões
+          do IBGE processados pelo pipeline Nexus.
+        </p>
+
+      </main>
+    </div>
+  </div>
+
+</body>
+
+</html>
