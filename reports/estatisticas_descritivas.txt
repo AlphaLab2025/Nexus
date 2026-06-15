@@ -1,0 +1,10 @@
+Estatisticas Descritivas - Variaveis Principais
+       total_products_value  total_freight_value  delivery_days  distance_km
+count              98666.00             98666.00       96476.00     98175.00
+mean                 137.75                22.82          12.56       601.65
+std                  210.65                21.65           9.55       595.20
+min                    0.85                 0.00           0.53         0.00
+25%                   45.90                13.85           6.77       185.72
+50%                   86.90                17.17          10.22       433.79
+75%                  149.90                24.04          15.72       799.34
+max                13440.00              1794.96         209.63      8677.91
