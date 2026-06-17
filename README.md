@@ -322,6 +322,12 @@ Este projeto foi desenvolvido para a Avaliação A3 da disciplina **Análise de 
 * Storytelling com Dados.
 * Governança e Qualidade da Informação.
 
+# Links
+
+**Brasil API:** https://brasilapi.com.br/api/feriados/v1/
+**IBGE:** https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome
+**Kaggle Olist:** https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+
 ---
 
 Este documento atende aos requisitos de documentação da Avaliação A3 da disciplina Análise de Dados e Big Data.
