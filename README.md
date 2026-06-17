@@ -34,10 +34,11 @@ Você pode visualizar e executar as análises deste projeto diretamente na nuvem
 
 Opção 1: Execução via Google Colab (Rápido)
 Para visualizar as análises exploratórias (EDA) e rodar o projeto diretamente no navegador, sem precisar instalar nada na sua máquina:
+
 🔗 Google Colab: https://colab.research.google.com/drive/17aK9Gap1pUsegNQNlLXvPLoi4iR-NjHc?usp=sharing
 
 Opção 2: Execução Local
-O projeto foi desenvolvido em Python e pode ser executado em qualquer ambiente compatível com Python 3.11 ou superior.
+O projeto foi desenvolvido em Python e pode ser executado em qualquer ambiente compatível com Python 3.10.0 ou superior.
 
 ## Pré-requisitos
 
