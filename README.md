@@ -232,27 +232,36 @@ Os dados processados podem ser utilizados para:
 ```text
 NEXUS/
 │
-├── src/
-│   └── pipeline/
-│       ├── build_analytics.py
-│       ├── extract_external.py
-│       ├── extract_ibge_locations.py
-│       ├── kaggle_download.py
-│       └── main.py
-│
-├── data/
-│   ├── brazilian-ecommerce/
-│   ├── processed/
-│   ├── brazil_holidays.csv
-│   └── ibge_states_regions.csv
-│
 ├── reports/
+│   ├── figures/
+│   │   ├── box_frete_regiao.png
+│   │   ├── heatmap_correlacao.png
+│   │   ├── hist_tempo_entrega.png
+│   │   ├── linha_tendencia_vendas.png
+│   │   └── scatter_distancia_tempo.png
+│   ├── estatisticas_descritivas.txt
 │   └── phase1_quality_report.md
 │
+├── src/
+│   ├── design/
+│   │   └── assets/
+│   ├── pipeline/
+│   │   ├── __pycache__/
+│   │   │   └── kaggle_download.cpython-314.pyc
+│   │   ├── build_analytics.py
+│   │   ├── extract_external.py
+│   │   ├── extract_ibge_locations.py
+│   │   └── kaggle_download.py
+│   ├── eda_nexus.py
+│   └── main.py
+│
+├── .gitignore
+├── .python-version
 ├── Dockerfile
+├── LICENSE
+├── main.py
 ├── pyproject.toml
 ├── README.md
-├── LICENSE
 └── uv.lock
 ```
 
