@@ -30,11 +30,19 @@ O projeto utiliza o dataset **Brazilian E-Commerce Public Dataset by Olist**, en
 
 # 🚀 Como Executar o Projeto
 
+Você pode visualizar e executar as análises deste projeto diretamente na nuvem ou configurá-lo no seu ambiente local.
+
+Opção 1: Execução via Google Colab (Rápido)
+Para visualizar as análises exploratórias (EDA) e rodar o projeto diretamente no navegador, sem precisar instalar nada na sua máquina:
+👉 Abrir no Google Colab
+Link: https://colab.research.google.com/drive/17aK9Gap1pUsegNQNlLXvPLoi4iR-NjHc?usp=sharing
+
+Opção 2: Execução Local
 O projeto foi desenvolvido em Python e pode ser executado em qualquer ambiente compatível com Python 3.11 ou superior.
 
 ## Pré-requisitos
 
-* Python 3.11+
+* Python 3.10.0+
 * Git
 * Kaggle API configurada
 * Gerenciador de pacotes UV
@@ -215,6 +223,7 @@ Os dados processados podem ser utilizados para:
 * CSV
 * Docker
 * UV Package Manager
+* Colab
 
 ---
 
