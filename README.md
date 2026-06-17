@@ -63,6 +63,9 @@ uv sync
 ## Execução do Pipeline
 
 ```bash
+uv run python src/main.py
+uv run python src/pipeline/build_analytics.py
+uv run python -m src.eda_nexus
 uv run streamlit run src/design/dashboard.py -- --csv data/processed/orders_analytics.csv
 ```
 
